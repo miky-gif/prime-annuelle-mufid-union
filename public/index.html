@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MUFID UNION - Consultation interne</title>
+  <meta name="description" content="Consultation interne MUFID UNION" />
+  <link rel="icon" href="/static/mufid-union-logo.webp" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="split">
+
+    <!-- ===================== Panneau de marque (gauche) ===================== -->
+    <aside class="split-brand">
+      <div class="brand-top">
+        <img src="/static/mufid-union-logo.webp" alt="Logo MUFID UNION" class="brand-logo" />
+        <span class="brand-name">MUFID UNION</span>
+      </div>
+
+      <div class="brand-content">
+        <span class="eyebrow-light">Ressources Humaines</span>
+        <h1>Votre avis compte pour MUFID&nbsp;UNION</h1>
+        <p class="brand-lead">
+          Participez a la consultation interne sur les criteres d'evaluation de
+          la prime annuelle. Quelques minutes suffisent.
+        </p>
+
+        <ul class="brand-points">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Reponses traitees en interne et confidentielles</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Environ 2 minutes pour completer le formulaire</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Une demarche collective d'amelioration continue</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Illustration -->
+      <div class="brand-illustration" aria-hidden="true">
+        <svg viewBox="0 0 360 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="78" y="34" width="150" height="186" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.45)" stroke-width="2"/>
+          <rect x="100" y="62" width="78" height="10" rx="5" fill="rgba(255,255,255,0.5)"/>
+          <rect x="100" y="84" width="106" height="7" rx="3.5" fill="rgba(255,255,255,0.28)"/>
+          <rect x="100" y="100" width="92" height="7" rx="3.5" fill="rgba(255,255,255,0.28)"/>
+          <rect x="100" y="124" width="106" height="7" rx="3.5" fill="rgba(255,255,255,0.28)"/>
+          <rect x="100" y="140" width="70" height="7" rx="3.5" fill="rgba(255,255,255,0.28)"/>
+          <rect x="100" y="170" width="60" height="20" rx="10" fill="rgba(255,255,255,0.55)"/>
+          <circle cx="232" cy="180" r="46" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+          <path d="M232 150l24 9v18c0 16-12 25-24 30-12-5-24-14-24-30v-18l24-9z" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.85)" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M223 180l6 6 12-12" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="84" cy="206" r="5" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="300" cy="70" r="7" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="56" cy="96" r="4" fill="rgba(255,255,255,0.35)"/>
+        </svg>
+      </div>
+
+      <p class="brand-foot">&copy; MUFID UNION &mdash; Communication interne</p>
+    </aside>
+
+    <!-- ===================== Zone formulaire (droite) ===================== -->
+    <main class="split-form">
+
+      <!-- ----- Formulaire ----- -->
+      <section id="form-section" class="form-panel">
+        <header class="panel-head">
+          <span class="eyebrow">Consultation interne</span>
+          <h2>Donnez votre avis</h2>
+          <p class="subtitle">
+            Les champs marques d'un <em>*</em> sont obligatoires.
+          </p>
+        </header>
+
+        <form id="participation-form" novalidate>
+          <input type="hidden" name="_csrf" id="csrf" value="" />
+
+          <div class="grid">
+            <label class="field">
+              <span>Nom <em>*</em></span>
+              <input type="text" name="nom" maxlength="80" required autocomplete="family-name" />
+            </label>
+
+            <label class="field">
+              <span>Prenom <em>*</em></span>
+              <input type="text" name="prenom" maxlength="80" required autocomplete="given-name" />
+            </label>
+
+            <label class="field">
+              <span>Service <em>*</em></span>
+              <input type="text" name="service" maxlength="120" required />
+            </label>
+
+            <label class="field">
+              <span>Fonction <em>*</em></span>
+              <input type="text" name="fonction" maxlength="120" required />
+            </label>
+          </div>
+
+          <label class="field field-full">
+            <span>
+              Selon vous, quels criteres de performance et d'engagement
+              devraient etre pris en compte dans l'evaluation de la prime
+              annuelle ? <em>*</em>
+            </span>
+            <textarea name="reponse" rows="5" maxlength="5000" required
+              placeholder="Partagez librement votre point de vue..."></textarea>
+          </label>
+
+          <p id="form-error" class="error-box" hidden></p>
+
+          <button type="submit" id="submit-btn" class="btn-primary">
+            <span id="submit-label">Envoyer ma reponse</span>
+            <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+      <!-- ----- Ecran pedagogique (apres envoi) ----- -->
+      <section id="debrief-section" class="debrief" hidden>
+        <span class="debrief-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <span class="eyebrow ok">Exercice de sensibilisation</span>
+        <h2>Ceci etait un test de vigilance</h2>
+        <p class="lead">
+          Ce formulaire faisait partie d'une <strong>campagne interne de
+          sensibilisation a la cybersecurite</strong> de MUFID UNION. Aucune
+          decision relative aux primes n'est concernee &mdash; et bonne nouvelle,
+          vous etes desormais mieux arme.
+        </p>
+
+        <h3>
+          <svg class="ico" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Les signaux qui auraient pu vous alerter
+        </h3>
+        <ul class="signals alert">
+          <li>Une <strong>promesse attractive</strong> (prime, recompense) incitant a agir vite.</li>
+          <li>Une demande d'informations personnelles via un formulaire non sollicite.</li>
+          <li>L'absence de validation par votre hierarchie ou les RH par un canal officiel.</li>
+          <li>Un lien ou une page recue par un canal inhabituel.</li>
+        </ul>
+
+        <h3>
+          <svg class="ico" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Les bons reflexes
+        </h3>
+        <ul class="signals good">
+          <li>En cas de doute, <strong>verifiez aupres de l'emetteur</strong> par un canal connu.</li>
+          <li>Ne communiquez jamais d'informations sensibles sur sollicitation inattendue.</li>
+          <li>Signalez tout message suspect a votre referent securite.</li>
+        </ul>
+
+        <div class="debrief-thanks">
+          <svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Merci pour votre participation. Ensemble, renforcons la securite de MUFID UNION.</span>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

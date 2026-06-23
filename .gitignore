@@ -1,0 +1,12 @@
+node_modules/
+.env
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+*.log
+
+# Cles de compte de service Firebase (NE JAMAIS committer)
+serviceAccountKey.json
+*serviceAccount*.json
+firebase-*.json
