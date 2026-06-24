@@ -52,7 +52,10 @@ app.use(
   })
 );
 
-if (TRUST_HTTPS) {
+// Sur Vercel (et tout reverse-proxy), le header X-Forwarded-For est toujours present.
+// trust proxy active la lecture de ce header pour le rate-limiting et req.ip.
+// Le flag secure des cookies reste controle separement par TRUST_PROXY_HTTPS.
+if (IS_PROD || TRUST_HTTPS) {
   app.set('trust proxy', 1);
 }
 
