@@ -6,7 +6,7 @@ const path = require('path');
 const crypto = require('crypto');
 const express = require('express');
 const helmet = require('helmet');
-const session = require('express-session');
+const cookieSession = require('cookie-session');
 const rateLimit = require('express-rate-limit');
 
 const dbApi = require('./db');
@@ -60,17 +60,13 @@ app.use(express.urlencoded({ extended: false, limit: '64kb' }));
 app.use(express.json({ limit: '64kb' }));
 
 app.use(
-  session({
+  cookieSession({
     name: 'mufid.sid',
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      httpOnly: true,
-      sameSite: 'strict',
-      secure: TRUST_HTTPS,
-      maxAge: 1000 * 60 * 60 * 8, // 8 heures
-    },
+    keys: [SESSION_SECRET],
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: TRUST_HTTPS,
+    maxAge: 1000 * 60 * 60 * 8, // 8 heures
   })
 );
 
@@ -252,17 +248,8 @@ app.post('/admin/login', loginLimiter, (req, res) => {
   const okUser = safeEqual(username || '', ADMIN_USERNAME);
   const okPass = ADMIN_PASSWORD && safeEqual(password || '', ADMIN_PASSWORD);
   if (okUser && okPass) {
-    req.session.regenerate((err) => {
-      if (err) {
-        return res
-          .status(500)
-          .set('Content-Type', 'text/html; charset=utf-8')
-          .send(renderLoginPage('Erreur de session. Reessayez.'));
-      }
-      req.session.isAdmin = true;
-      return res.redirect('/admin');
-    });
-    return;
+    req.session.isAdmin = true;
+    return res.redirect('/admin');
   }
   return res
     .status(401)
@@ -271,7 +258,8 @@ app.post('/admin/login', loginLimiter, (req, res) => {
 });
 
 app.post('/admin/logout', requireAdmin, (req, res) => {
-  req.session.destroy(() => res.redirect('/admin/login'));
+  req.session = null;
+  res.redirect('/admin/login');
 });
 
 app.post('/admin/delete', requireAdmin, verifyCsrf, async (req, res) => {
